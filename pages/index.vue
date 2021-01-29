@@ -28,13 +28,9 @@
 </template>
 
 <script lang="ts">
-// import Vue from 'vue'
-// export default Vue.extend({})
-import { Component, Vue } from 'vue-property-decorator';
+import Vue from 'vue'
 
-@Component
-export default class PageIndex extends Vue {
-}
+export default Vue.extend({})
 </script>
 
 <style>
