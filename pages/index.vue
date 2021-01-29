@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
+      <Logo :width="245" :height="180" />
       <h1 class="title">
         tutuxt
       </h1>
@@ -11,7 +11,7 @@
           target="_blank"
           rel="noopener noreferrer"
           class="button--green"
-        >
+        >x
           Documentation
         </a>
         <a
