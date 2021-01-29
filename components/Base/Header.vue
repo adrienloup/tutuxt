@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import ButtonPrimary from '@/components/Button/Primary';
+import ButtonPrimary from '@/components/Button/Primary.vue';
 
 export default {
   components: { ButtonPrimary }

@@ -50,5 +50,20 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/scss/var.scss';
 
+.ButtonPrimary {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  background-color: $color-primary;
+  border-radius: 2rem;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  color: $color-default;
+  cursor: pointer;
+  outline: none;
+}
 </style>
