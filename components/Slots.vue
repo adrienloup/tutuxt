@@ -10,7 +10,7 @@
 
 <script lang="ts">
 export default {
-  name: 'Slot'
+  name: 'Slots'
 }
 </script>
 
@@ -18,6 +18,6 @@ export default {
 div {
   display: inline-block;
   vertical-align: top;
-  margin: 0 2rem 2rem 0;
+  margin-right: 1rem;
 }
 </style>

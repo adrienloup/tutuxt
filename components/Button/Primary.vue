@@ -3,6 +3,7 @@
     :is="is"
     class="ButtonPrimary"
     :href="href"
+    :target="target"
     :to="to"
     :type="type"
     v-on="$listeners"
@@ -52,7 +53,8 @@ export default {
 <style lang="scss">
 @import './assets/scss/var.scss';
 
-.ButtonPrimary {
+.ButtonPrimary,
+button.ButtonPrimary {
   display: inline-block;
   vertical-align: middle;
   padding: 1rem 1.5rem;
@@ -62,8 +64,14 @@ export default {
   border: none;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.2;
   color: $color-default;
   cursor: pointer;
   outline: none;
+
+  &.nuxt-link-exact-active {
+    background-color: $color-secondary;
+  }
 }
 </style>
