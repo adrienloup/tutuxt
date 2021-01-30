@@ -6,21 +6,14 @@
       {{ listed.length }}
     </label>
 
-    <div v-for="item in listed">
-
-      <div v-if="slug">
-        <NuxtLink :to="{ name: slug, params: { slug: item.slug } }">
-          {{ item.title }}
-        </NuxtLink>
-      </div>
-
-      <div v-else>
+    <ul>
+      <li v-for="item in listed">
         {{ item.title }}
-      </div>
-
-    </div>
+      </li>
+    </ul>
 
     <div v-if="listed.length === 0">Not found</div>
+
   </div>
 </template>
 
@@ -35,8 +28,7 @@ export default {
   },
   data() {
     return {
-      search: '',
-      slug: ''
+      search: ''
     };
   },
   computed: {
