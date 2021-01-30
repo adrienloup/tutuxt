@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="TutuxtLogo"
+    class="NuxtLogo"
     :width="width"
     :height="height"
     viewBox="0 0 452 342"
@@ -23,7 +23,7 @@
 
 <script lang="ts">
 export default {
-  name: 'Logo',
+  name: 'Nuxt',
   props: {
     width: {
       type: String,
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style>
-.TutuxtLogo {
+.NuxtLogo {
   animation: 1s appear;
   margin: auto;
 }

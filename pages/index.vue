@@ -1,7 +1,7 @@
 <template>
   <section class="tutuxt-content">
 
-    <Logo
+    <NuxtLogo
       v-bind="logo"
     />
 
@@ -13,12 +13,10 @@
 </template>
 
 <script lang="ts">
-import Logo from '@/components/Logo.vue';
+import NuxtLogo from '@/components/Logo/Nuxt.vue';
 
 export default {
-  components: {
-    Logo
-  },
+  components: { NuxtLogo },
   data() {
     return {
       logo: {

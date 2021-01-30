@@ -1,10 +1,13 @@
 <template>
   <section class="tutuxt-content">
 
-    <h1>
-      Component
-    </h1>
+    <h2>
+      Slider
+    </h2>
 
+    <Slider :slides="[{ title: 'Slide 1' }, { title: 'Slide 2' }, { title: 'Slide 3' }]" />
+
+    <br>
     <br>
 
     <h2>
@@ -28,10 +31,12 @@
     <ButtonPrimary
       :type="'submit'"
     >
-      Submit
+      Type
     </ButtonPrimary>
 
-    <br><br>
+    <br>
+    <br>
+    <br>
 
     <h2>
       Slots
@@ -55,11 +60,13 @@
 </template>
 
 <script>
+import Slider from '@/components/Slider/Slider';
 import ButtonPrimary from '@/components/Button/Primary';
-import Slots from '@/components/Slots.vue';
+import Slots from '@/components/Slots';
 
 export default {
   components: {
+    Slider,
     ButtonPrimary,
     Slots
   }
