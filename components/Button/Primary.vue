@@ -1,7 +1,7 @@
 <template>
   <component
     :is="is"
-    class="ButtonPrimary"
+    class="button-primary"
     :href="href"
     :target="target"
     :to="to"
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'ButtonPrimary',
+  name: 'button-primary',
   props: {
     href: {
       type: String,
@@ -53,8 +53,8 @@ export default {
 <style lang="scss">
 @import './assets/scss/var.scss';
 
-.ButtonPrimary,
-button.ButtonPrimary {
+.button-primary,
+button.button-primary {
   display: inline-block;
   vertical-align: middle;
   padding: 1rem 1.5rem;
