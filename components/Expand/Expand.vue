@@ -1,27 +1,60 @@
 <template>
-  <div>
-    <div style="padding: .5rem; background: #d6d7d7;" @click="value_sync = !value_sync">
-      {{ title }} {{ value_sync }}
+  <div class="expand">
+
+    <div
+      class="expand-header"
+      @click="value_sync = !value_sync"
+    >
+      {{ value_sync }}
     </div>
-    <div v-if="value_sync" style="padding: .5rem; background: #aaa;">
+
+    <div
+      class="expand-content"
+      v-if="value_sync"
+    >
       <slot />
     </div>
+
   </div>
 </template>
 
 <script>
-  import propSync from '../../../styleguide/src/mixins/prop-sync.js';
+import propSync from '@/mixins/prop-sync.js';
 
-  export default {
-    name: 'TestExpand',
-    mixins: [
-      propSync('value', false, Boolean, false)
-    ],
-    props: {
-      title: {
-        type: String,
-        default: ''
-      }
+export default {
+  name: 'Expand',
+  mixins: [
+    propSync(
+      'value',
+      false,
+      Boolean,
+      false
+    )
+  ],
+  props: {
+    title: {
+      type: String,
+      default: null
     }
-  };
+  }
+}
 </script>
+
+<style lang="scss">
+@import './assets/scss/var.scss';
+
+.expand {
+  font-size: 1rem;
+
+  &-header {
+    padding: 1rem;
+    background-color: $color-primary;
+    color: $color-default;
+    cursor: pointer;
+  }
+
+  &-content {
+    padding: 1rem;
+  }
+}
+</style>

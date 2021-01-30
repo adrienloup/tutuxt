@@ -2,7 +2,10 @@
   <div>
 
     <label>
-      <input v-model="search" type="text" class="input" />
+      <input
+        v-model="search"
+        type="text"
+      />
       {{ listed.length }}
     </label>
 

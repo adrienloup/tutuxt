@@ -1,29 +1,30 @@
 <template>
-  <ul>
-    <li v-for="item in items" :key="item.id">
-      <test-expand
+  <div class="expands">
+
+    <div v-for="item in items" :key="item.title">
+      <Expand
         :title="item.title"
         :value.sync="item.expand"
       >
         {{ item.content }}
-      </test-expand>
-    </li>
-  </ul>
+      </Expand>
+    </div>
+
+  </div>
 </template>
 
 <script>
-  import TestExpand from './TestExpand';
+import Expand from '@/components/Expand/Expand';
+import ButtonPrimary from '@/components/Button/Primary';
 
-  export default {
-    name: 'TestBlock',
-    components: {
-      TestExpand
-    },
-    props: {
-      items: {
-        type: Array,
-        default: () => []
-      }
+export default {
+  name: 'Expands',
+  components: { ButtonPrimary, Expand },
+  props: {
+    items: {
+      type: Array,
+      default: () => []
     }
-  };
+  }
+};
 </script>
