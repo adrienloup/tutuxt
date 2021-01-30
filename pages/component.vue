@@ -2,6 +2,48 @@
   <section class="tutuxt-content">
 
     <h2>
+      TodoList
+    </h2>
+
+    <TodoList />
+
+    <br>
+    <br>
+
+    <h2>
+      Sticky
+    </h2>
+
+    <Sticky />
+
+    <br>
+    <br>
+
+    <h2>
+      Lazy
+    </h2>
+
+    <Lazy />
+
+    <br>
+    <br>
+
+    <h2>
+      Slider
+    </h2>
+
+    <Slider
+      :slides="[
+        { title: 'Slide 1' },
+        { title: 'Slide 2' },
+        { title: 'Slide 3' }
+      ]"
+    />
+
+    <br>
+    <br>
+
+    <h2>
       Expands
     </h2>
 
@@ -13,27 +55,6 @@
       ]"
     />
 
-    <br>
-    <br>
-    <br>
-
-    <h2>
-      TodoList
-    </h2>
-
-    <TodoList />
-
-    <br>
-    <br>
-    <br>
-
-    <h2>
-      Lazy
-    </h2>
-
-    <Lazy />
-
-    <br>
     <br>
     <br>
 
@@ -52,23 +73,6 @@
       ]"
     />
 
-    <br>
-    <br>
-    <br>
-
-    <h2>
-      Slider
-    </h2>
-
-    <Slider
-      :slides="[
-        { title: 'Slide 1' },
-        { title: 'Slide 2' },
-        { title: 'Slide 3' }
-      ]"
-    />
-
-    <br>
     <br>
     <br>
 
@@ -99,7 +103,6 @@
     <br>
     <br>
     <br>
-    <br>
 
     <h2>
       Slots
@@ -123,21 +126,23 @@
 </template>
 
 <script>
-import Expands from '@/components/Expand/Expands';
 import TodoList from '@/components/TodoList/List';
+import Sticky from '@/components/Sticky/Sticky';
 import Lazy from '@/components/Lazy/Lazy';
-import Search from '@/components/Search/Search'
 import Slider from '@/components/Slider/Slider';
+import Expands from '@/components/Expand/Expands';
+import Search from '@/components/Search/Search'
 import ButtonPrimary from '@/components/Button/Primary';
 import Slots from '@/components/Slots';
 
 export default {
   components: {
-    Expands,
     TodoList,
+    Sticky,
     Lazy,
-    Search,
     Slider,
+    Expands,
+    Search,
     ButtonPrimary,
     Slots
   }

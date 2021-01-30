@@ -27,7 +27,7 @@ $t-delay: 200ms;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
     display: block;
     width: 100%;
     height: 50%;
