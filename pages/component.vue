@@ -2,10 +2,24 @@
   <section class="tutuxt-content">
 
     <h2>
+      Search
+    </h2>
+
+    <Search
+      :search="''"
+      :list="[{ id: 1, title: 'apple' }, { id: 2, title: 'banana' }, { id: 3, title: 'cherries' }, { id: 4, title: 'peach' }, { id: 5, title: 'orange' }]"
+    />
+
+    <br>
+    <br>
+
+    <h2>
       Slider
     </h2>
 
-    <Slider :slides="[{ title: 'Slide 1' }, { title: 'Slide 2' }, { title: 'Slide 3' }]" />
+    <Slider
+      :slides="[{ title: 'Slide 1' }, { title: 'Slide 2' }, { title: 'Slide 3' }]"
+    />
 
     <br>
     <br>
@@ -60,12 +74,14 @@
 </template>
 
 <script>
+import Search from '@/components/Search'
 import Slider from '@/components/Slider/Slider';
 import ButtonPrimary from '@/components/Button/Primary';
 import Slots from '@/components/Slots';
 
 export default {
   components: {
+    Search,
     Slider,
     ButtonPrimary,
     Slots
