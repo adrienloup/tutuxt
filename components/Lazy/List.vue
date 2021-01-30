@@ -29,7 +29,7 @@ import Loader from '@/components/Loader/Loader';
 
 export default {
   name: 'List',
-  components: {Loader, ButtonPrimary },
+  components: { Loader, ButtonPrimary },
   props: {
     show: {
       type: Boolean,

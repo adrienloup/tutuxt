@@ -30,9 +30,9 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, name: 'Banana', price: 1 },
-        { id: 2, name: 'Orange', price: 2 },
-        { id: 3, name: 'Apple', price: 1 }
+        { id: 1, name: 'Banana' },
+        { id: 2, name: 'Orange' },
+        { id: 3, name: 'Apple' }
       ],
       cart: [],
       total: 0

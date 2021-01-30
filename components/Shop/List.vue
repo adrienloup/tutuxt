@@ -1,6 +1,6 @@
 <template>
   <div class="shop-item">
-    <h4>{{ item.name }}</h4>
+    <h4 @click="addToCart(item)">{{ item.name }}</h4>
     <ButtonPrimary @click="addToCart(item)">
       Add
     </ButtonPrimary>

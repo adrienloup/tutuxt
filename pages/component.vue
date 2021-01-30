@@ -1,13 +1,18 @@
 <template>
   <section class="tutuxt-content">
 
+    <h1>
+      Components
+    </h1>
+
+    <br>
+
     <h2>
       TodoList
     </h2>
 
     <TodoList />
 
-    <br>
     <br>
 
     <h2>
@@ -17,7 +22,6 @@
     <Shop />
 
     <br>
-    <br>
 
     <h2>
       Sticky
@@ -26,7 +30,6 @@
     <Sticky />
 
     <br>
-    <br>
 
     <h2>
       Lazy
@@ -34,7 +37,6 @@
 
     <Lazy />
 
-    <br>
     <br>
 
     <h2>
@@ -50,7 +52,6 @@
     />
 
     <br>
-    <br>
 
     <h2>
       Expands
@@ -64,7 +65,6 @@
       ]"
     />
 
-    <br>
     <br>
 
     <h2>
@@ -82,7 +82,6 @@
       ]"
     />
 
-    <br>
     <br>
 
     <h2>
@@ -109,7 +108,6 @@
       Type
     </ButtonPrimary>
 
-    <br>
     <br>
     <br>
 

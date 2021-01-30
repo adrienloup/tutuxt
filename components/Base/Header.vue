@@ -1,7 +1,7 @@
 <template>
   <header class="tutuxt-header">
     <ButtonPrimary :to="'/'">TuTuxt</ButtonPrimary>
-    <ButtonPrimary :to="'/component'">Component</ButtonPrimary>
+    <ButtonPrimary :to="'/component'">Components</ButtonPrimary>
     <ButtonPrimary :to="'/blog'">Blog</ButtonPrimary>
   </header>
 </template>
