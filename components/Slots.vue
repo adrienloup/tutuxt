@@ -18,6 +18,6 @@ export default {
 div {
   display: inline-block;
   vertical-align: top;
-  margin-right: 1rem;
+  margin: 0 1rem 2rem 0;
 }
 </style>
