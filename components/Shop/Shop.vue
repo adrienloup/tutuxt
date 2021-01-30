@@ -1,0 +1,52 @@
+<template>
+  <div class="shop">
+
+    <Cart
+      :cart="cart"
+      :total="total"
+      @empty-cart="emptyCart"
+    />
+
+    <List
+      v-for="item in items"
+      :item="item"
+      :key="item.id"
+      @update-cart="updateCart"
+    />
+
+  </div>
+</template>
+
+<script>
+import List from '@/components/Shop/List';
+import Cart from '@/components/Shop/Cart';
+
+export default {
+  name: 'Shop',
+  components: {
+    List,
+    Cart
+  },
+  data() {
+    return {
+      items: [
+        { id: 1, name: 'Banana', price: 1 },
+        { id: 2, name: 'Orange', price: 2 },
+        { id: 3, name: 'Apple', price: 1 }
+      ],
+      cart: [],
+      total: 0
+    }
+  },
+  methods: {
+    updateCart(item) {
+      this.cart.push(item);
+      this.total = this.cart.length;
+    },
+    emptyCart() {
+      this.cart = [];
+      this.total = 0;
+    }
+  }
+}
+</script>

@@ -11,6 +11,15 @@
     <br>
 
     <h2>
+      Shop
+    </h2>
+
+    <Shop />
+
+    <br>
+    <br>
+
+    <h2>
       Sticky
     </h2>
 
@@ -127,6 +136,7 @@
 
 <script>
 import TodoList from '@/components/TodoList/List';
+import Shop from '@/components/Shop/Shop';
 import Sticky from '@/components/Sticky/Sticky';
 import Lazy from '@/components/Lazy/Lazy';
 import Slider from '@/components/Slider/Slider';
@@ -138,6 +148,7 @@ import Slots from '@/components/Slots';
 export default {
   components: {
     TodoList,
+    Shop,
     Sticky,
     Lazy,
     Slider,
