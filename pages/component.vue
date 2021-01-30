@@ -8,6 +8,14 @@
     <br>
 
     <h2>
+      Popin
+    </h2>
+
+    <Popins />
+
+    <br>
+
+    <h2>
       TodoList
     </h2>
 
@@ -133,6 +141,7 @@
 </template>
 
 <script>
+import Popins from '@/components/Popin/Popins';
 import TodoList from '@/components/TodoList/List';
 import Shop from '@/components/Shop/Shop';
 import Sticky from '@/components/Sticky/Sticky';
@@ -145,6 +154,7 @@ import Slots from '@/components/Slots';
 
 export default {
   components: {
+    Popins,
     TodoList,
     Shop,
     Sticky,
