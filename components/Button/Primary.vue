@@ -70,8 +70,16 @@ button.button-primary {
   cursor: pointer;
   outline: none;
 
-  &.nuxt-link-exact-active {
+  &:hover {
     background-color: $color-secondary;
+  }
+
+  &:disabled {
+    opacity: .6;
+
+    &:hover {
+      background-color: $color-primary;
+    }
   }
 }
 </style>

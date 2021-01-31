@@ -1,22 +1,18 @@
 <template>
   <section class="tutuxt-content">
 
+    <h1>
+      Component
+    </h1>
+
+    <br>
+
     <h2>
       TodoList
     </h2>
 
     <TodoList />
 
-    <br>
-    <br>
-
-    <h2>
-      Sticky
-    </h2>
-
-    <Sticky />
-
-    <br>
     <br>
 
     <h2>
@@ -25,7 +21,6 @@
 
     <Lazy />
 
-    <br>
     <br>
 
     <h2>
@@ -41,21 +36,29 @@
     />
 
     <br>
+
+    <h2>
+      Popin
+    </h2>
+
+    <Popins />
+
     <br>
 
     <h2>
-      Expands
+      Sticky
     </h2>
 
-    <Expands
-      :items="[
-        { title: '1', content: 'Expand 1', expand: true },
-        { title: '2', content: 'Expand 2', expand: false },
-        { title: '3', content: 'Expand 3', expand: false }
-      ]"
-    />
+    <Sticky />
 
     <br>
+
+    <h2>
+      Cart
+    </h2>
+
+    <Shop />
+
     <br>
 
     <h2>
@@ -73,7 +76,6 @@
       ]"
     />
 
-    <br>
     <br>
 
     <h2>
@@ -102,49 +104,47 @@
 
     <br>
     <br>
-    <br>
 
     <h2>
-      Slots
+      Expands
     </h2>
 
-    <Slots>
-      <template>Slot 1</template>
-    </Slots>
+    <Expands
+      :items="[
+        { title: '1', content: 'Expand 1', expand: true },
+        { title: '2', content: 'Expand 2', expand: false },
+        { title: '3', content: 'Expand 3', expand: false }
+      ]"
+    />
 
-    <Slots>
-      <template>Slot 2</template>
-      <template slot="slotA">Replace A</template>
-    </Slots>
-
-    <Slots>
-      <template>Slot 3</template>
-      <template slot="slotB">Replace B</template>
-    </Slots>
+    <br>
+    <br>
 
   </section>
 </template>
 
 <script>
+import Popins from '@/components/Popin/Popins';
 import TodoList from '@/components/TodoList/List';
+import Shop from '@/components/Cart/Shop';
 import Sticky from '@/components/Sticky/Sticky';
 import Lazy from '@/components/Lazy/Lazy';
 import Slider from '@/components/Slider/Slider';
 import Expands from '@/components/Expand/Expands';
 import Search from '@/components/Search/Search'
 import ButtonPrimary from '@/components/Button/Primary';
-import Slots from '@/components/Slots';
 
 export default {
   components: {
+    Popins,
     TodoList,
+    Shop,
     Sticky,
     Lazy,
     Slider,
     Expands,
     Search,
-    ButtonPrimary,
-    Slots
+    ButtonPrimary
   }
 }
 </script>

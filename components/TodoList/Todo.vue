@@ -19,7 +19,10 @@
       />
     </label>
 
-    <ButtonPrimary @click.prevent="removeTodo(todo)">
+    <ButtonPrimary
+      @click.prevent="removeTodo(todo)"
+      :disabled="!todo.done"
+    >
       Remove
     </ButtonPrimary>
 

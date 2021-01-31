@@ -7,8 +7,8 @@
      :class="{ 'active': key === index }"
    >
      <NuxtLogo
-       :width="'115'"
-       :height="'87'"
+       :width="'185'"
+       :height="'140'"
      />
    </Slide>
 
