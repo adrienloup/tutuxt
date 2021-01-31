@@ -18,21 +18,20 @@
 </template>
 
 <script>
-import List from '@/components/Shop/List';
-import Cart from '@/components/Shop/Cart';
+import Cart from '@/components/Cart/Cart';
+import List from '@/components/Cart/List';
 
 export default {
   name: 'Shop',
-  components: {
-    List,
-    Cart
-  },
+  components: { Cart, List },
   data() {
     return {
       items: [
-        { id: 1, name: 'Banana' },
-        { id: 2, name: 'Orange' },
-        { id: 3, name: 'Apple' }
+        { id: 1, name: 'Apple' },
+        { id: 2, name: 'Banana' },
+        { id: 3, name: 'Cherries' },
+        { id: 4, name: 'Peach' },
+        { id: 5, name: 'Orange' }
       ],
       cart: [],
       total: 0

@@ -1,15 +1,27 @@
 <template>
-  <section class="page-shop">
+  <section class="tutuxt-content">
 
     <h1>
-      Shop
+      Page
     </h1>
+
+    <br>
+
+    <nav>
+      <ButtonPrimary :to="'/page/page1'">Page 1</ButtonPrimary>
+      <ButtonPrimary :to="'/page/page2'">Page 2</ButtonPrimary>
+    </nav>
+
+    <br>
+
+    <NuxtChild />
 
   </section>
 </template>
+<script>
+import ButtonPrimary from '@/components/Button/Primary';
 
-<style lang="scss">
-.page-shop {
-  background-color: #2d2d2d;
+export default {
+  components: { ButtonPrimary }
 }
-</style>
+</script>

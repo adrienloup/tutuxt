@@ -1,9 +1,15 @@
 <template>
-  <section class="tutuxt-content">
+  <div>
 
-    <h1>
-      Page 2
-    </h1>
+    <h2>
+      Index
+    </h2>
 
-  </section>
+    <br>
+
+    <Debug>
+      route.path : {{ $route.path }}<br>
+    </Debug>
+
+  </div>
 </template>

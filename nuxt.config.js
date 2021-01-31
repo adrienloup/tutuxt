@@ -22,11 +22,13 @@ export default {
   css: [ '@/assets/scss/main' ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [ '~/plugins/global' ],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: false,
+  // Router Configuration
+  router: {
+    linkActiveClass: 'active',
+    linkExactActiveClass: 'exact'
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

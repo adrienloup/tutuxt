@@ -58,54 +58,78 @@ body.popin-active {
   right: 0;
   bottom: 0;
   left: 0;
+  padding: 2rem;
+
+  @media (max-width: 375px) {
+    padding: 0;
+  }
 
   &-shadow {
-    position: relative;
+    position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0%, 0%, .2);
+    background-color: rgba(0, 0%, 0%, .3);
+    animation: 1s appear;
   }
 
   &-inner {
-    position: absolute;
+    position: relative;
     z-index: 2;
     padding: 2rem;
-    width: auto;
+    width: 100%;
+    max-width: calc(375px);
     height: auto;
     background-color: #fff;
-    animation-duration: .4s;
+    animation-duration: .3s;
     animation-timing-function: ease-in-out;
 
     .top & {
-      width: 100%;
       top: 0;
       animation-name: top;
     }
 
     .right & {
-      height: 100%;
       right: 0;
       animation-name: right;
     }
 
     .bottom & {
-      width: 100%;
       bottom: 0;
+      align-items: flex-end;
       animation-name: bottom;
     }
 
     .left & {
-      height: 100%;
       left: 0;
       animation-name: left;
     }
   }
 
+  &.top {
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &.right {
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &.bottom {
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &.left {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
   &.active {
-    display: block;
+    display: flex;
   }
 }
 
@@ -142,6 +166,12 @@ body.popin-active {
   }
   to {
     -webkit-transform: translate3d(0%, 0, 0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
   }
 }
 

@@ -73,5 +73,13 @@ button.button-primary {
   &:hover {
     background-color: $color-secondary;
   }
+
+  &:disabled {
+    opacity: .6;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
 }
 </style>
