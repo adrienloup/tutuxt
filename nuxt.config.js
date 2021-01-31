@@ -26,6 +26,7 @@ export default {
 
   // Router Configuration
   router: {
+    middleware: ['class'],
     linkActiveClass: 'active',
     linkExactActiveClass: 'exact',
     extendRoutes(routes, resolve) {
