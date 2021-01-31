@@ -55,4 +55,23 @@ export default {
   opacity: 0;
   transform: translate3d(15px, 0, 0);
 }
+//
+//.page-move {
+//  transition: all .6s ease-in-out .05s;
+//}
+//.page-enter-active {
+//  transition: all .3s ease-out;
+//}
+//.page-leave-active {
+//  transition: all .2s ease-in;
+//  position: absolute;
+//  z-index: 0;
+//}
+//.page-enter,
+//.page-leave-to {
+//  opacity: 0;
+//}
+//.page-enter {
+//  transform: scale(.9);
+//}
 </style>

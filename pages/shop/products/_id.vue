@@ -24,16 +24,6 @@
 
       <h2>{{ post.title }}</h2>
 
-      <br>
-
-      <Debug>
-        route : {{ $route.path }}<br>
-        name : {{ $router.currentRoute.name }}<br>
-        params : {{ $router.currentRoute.params }}<br>
-        fullPath : {{ $router.currentRoute.fullPath }}<br>
-        query : {{ $router.currentRoute.query }}
-      </Debug>
-
     </div>
 
   </article>

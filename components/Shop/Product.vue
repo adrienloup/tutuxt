@@ -5,6 +5,9 @@
         tutu
       </div>
     </div>
+    <NuxtLink :to="{ name: 'shop-products-id', params: { id: product.id } }">>
+      shop-products
+    </NuxtLink>
     <div class="caption">
       <span class="title">{{ product.name }}</span>
       <span class="sale" v-if="product.sale">Sale</span>

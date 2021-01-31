@@ -42,7 +42,7 @@ export const mutations = {
 
 const createProducts = [
   {
-    id: '8b65-' + Date.now(),
+    id: '8b65-f81',
     name: 'Bodycon poplin shirt',
     price: 25.50,
     discount: 0,
@@ -79,7 +79,7 @@ const createProducts = [
     ]
   },
   {
-    id: '7r86-' + Date.now(),
+    id: '7r86-t12',
     name: 'Mid-length check mullet dress',
     price: 20.00,
     discount: 20,
@@ -114,7 +114,7 @@ const createProducts = [
     ]
   },
   {
-    id: '4c43-'+ Date.now(),
+    id: '4c43-d62',
     name: 'High waisted skinny jeans with fading',
     price: 50.50,
     discount: 10,
@@ -146,7 +146,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2d89-'+ Date.now(),
+    id: '2d89-s73',
     name: 'High-waisted slim jeans with rips',
     price: 15.50,
     discount: 0,
@@ -186,7 +186,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2y89-'+ Date.now(),
+    id: '2y89-p44',
     name: 'Crepe coat with pockets',
     price: 30.00,
     discount: 40,
@@ -219,7 +219,7 @@ const createProducts = [
     ]
   },
   {
-    id: '4r89-'+ Date.now(),
+    id: '4r89-y85',
     name: 'Short shirt dress in cotton',
     price: 16.90,
     discount: 10,
@@ -253,7 +253,7 @@ const createProducts = [
     ]
   },
   {
-    id: '8u10-'+ Date.now(),
+    id: '8u10-z86',
     name: 'Selected slim jeans',
     price: 9.99,
     discount: 0,
@@ -287,7 +287,7 @@ const createProducts = [
     ],
   },
   {
-    id: '777-'+ Date.now(),
+    id: '777-r77',
     name: 'Military style coat',
     price: 190.00,
     discount: 0,
@@ -321,7 +321,7 @@ const createProducts = [
     ]
   },
   {
-    id: '9i19-'+ Date.now(),
+    id: '9i19-z02',
     name: 'Selected straight jeans',
     price: 120.00,
     discount: 0,
@@ -356,7 +356,7 @@ const createProducts = [
     ]
   },
   {
-    id: '1e18-'+ Date.now(),
+    id: '1e18-o92',
     name: 'Selected cotton and cashmere blend knit sweater',
     price: 89.00,
     discount: 0,
@@ -384,7 +384,7 @@ const createProducts = [
     ]
   },
   {
-    id: '1r45-'+ Date.now(),
+    id: '1r45-o78',
     name: 'Military style coat',
     price: 499.00,
     discount: 50,
@@ -415,7 +415,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2z45-'+ Date.now(),
+    id: '2z45-p98',
     name: 'Long sleeve shirt and pattern',
     price: 290.00,
     discount: 30,
@@ -449,7 +449,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2r11-'+ Date.now(),
+    id: '2r11-n54',
     name: 'Reversible cotton short babydoll dress',
     price: 199.00,
     discount: 30,
@@ -481,7 +481,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2b11-'+ Date.now(),
+    id: '2b11-m59',
     name: 'Missguided Bodycon Dress with High Neck',
     price: 40.00,
     discount: 0,
@@ -511,7 +511,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2t51-'+ Date.now(),
+    id: '2t51-o77',
     name: 'Jean pretty little thing',
     price: 30.90,
     discount: 10,
@@ -542,7 +542,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2h81-'+ Date.now(),
+    id: '2h81-p97',
     name: 'Noisy May Curve knitted midi cardigan',
     price: 42.00,
     discount: 10,
@@ -574,7 +574,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2c01-'+ Date.now(),
+    id: '2c01-b99',
     name: 'Wrap shirt noisy dress at the waist',
     price: 380.00,
     discount: 0,
@@ -606,7 +606,7 @@ const createProducts = [
     ]
   },
   {
-    id: '9b01-'+ Date.now(),
+    id: '9b01-b99',
     name: 'Organic fabric half-zip sweatshirt',
     price: 569.90,
     discount: 30,
@@ -639,7 +639,7 @@ const createProducts = [
     ]
   },
   {
-    id: '2o02-'+ Date.now(),
+    id: '2o02-p97',
     name: 'Faux fur coat with leopard pattern',
     price: 450.00,
     discount: 0,
@@ -675,7 +675,7 @@ const createProducts = [
     ]
   },
   {
-    id: '9z01-'+ Date.now(),
+    id: '9z01-w86',
     name: 'Slim with exposed button fastening',
     price: 420.00,
     discount: 0,

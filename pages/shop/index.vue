@@ -1,16 +1,19 @@
 <template>
 
   <article
-    v-if="products.length"
+    v-if="products && products.length"
     class="shop-content"
   >
+
     <h2>Index</h2>
+
     <ShopProduct
       v-for="(product, index) in products"
       :key="product.id"
       :product="product"
       :index="index"
     />
+
   </article>
 
   <div v-else>
