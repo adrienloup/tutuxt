@@ -1,5 +1,5 @@
 <template>
-  <article class="page-post">
+  <article>
 
     <div v-if="$fetchState.pending">
       <Loader />
@@ -24,6 +24,10 @@
 
       <h2>{{ post.title }}</h2>
 
+      <Debug>
+        route.path : {{ $route.path }}<br>
+      </Debug>
+
     </div>
 
   </article>
@@ -47,9 +51,6 @@ export default {
     goBack() {
       return this.$router.go(-1);
     },
-    tutu() {
-      console.log('tutu');
-    }
   },
   async fetch() {
     this.post = await fetch(
@@ -58,9 +59,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.page-post {
-  padding: 0 2rem 2rem;
-}
-</style>
