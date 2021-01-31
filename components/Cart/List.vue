@@ -1,9 +1,6 @@
 <template>
-  <div class="shop-item">
+  <div class="cart-list-item">
     <h4 @click="addToCart(item)">{{ item.name }}</h4>
-    <ButtonPrimary @click="addToCart(item)">
-      Add
-    </ButtonPrimary>
   </div>
 </template>
 
@@ -21,3 +18,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.cart-list-item {
+  cursor: pointer;
+}
+</style>

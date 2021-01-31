@@ -1,0 +1,166 @@
+@import './assets/scss/var.scss';
+
+html {
+  font-family: $font-family;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  color: $color-primary;
+  background-color: $color-default;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+a {
+  color: $color-primary;
+}
+
+ul {
+  padding: 1rem;
+}
+
+img {
+  max-width: 250px;
+  width: 100%;
+  display: block;
+}
+
+input[type="text"] {
+  display: inline-block;
+  vertical-align: middle;
+  color: $color-primary;
+  background-color: #fff;
+  -webkit-appearance: none;
+  padding: .6rem;
+  border-radius: .3rem;
+  border: 3px solid rgba(0, 0, 0, .2);
+  font-family: $font-family;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.tutuxt {
+  position: relative;
+
+  &-header {
+    padding: 2rem;
+
+    a {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 1.1rem;
+    }
+  }
+
+  &-content {
+    padding: 0 2rem;
+  }
+}
+
+$t-duration: 600ms;
+$t-delay: 200ms;
+
+.page-enter-active,
+.page-leave-active {
+  transition-duration: $t-duration * 2;
+
+  &::before,
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: 50%;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-in-out;
+  }
+
+  &::before {
+    background-color: #00C58E;
+  }
+
+  &::after {
+    top: 50%;
+    background-color: #00C58E;
+  }
+}
+
+.page-leave {
+  &::before,
+  &::after {
+    transform: scaleX(0);
+  }
+}
+
+.page-leave-active {
+  &::before {
+    transition-duration: $t-duration;
+  }
+
+  &::after {
+    transition-duration: $t-duration - $t-delay;
+    transition-delay: $t-delay;
+  }
+}
+
+.page-leave-to {
+  &::before,
+  &::after {
+    transform: scale(1);
+    transform-origin: left;
+  }
+}
+
+.page-enter {
+  &::before,
+  &::after {
+    transform: scaleX(1);
+  }
+}
+
+.page-enter-active {
+  &::before {
+    transition-duration: $t-duration;
+  }
+
+  &::after {
+    transition-duration: $t-duration - $t-delay;
+    transition-delay: $t-delay;
+  }
+}
+
+.page-enter-to {
+  &::before,
+  &::after {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}

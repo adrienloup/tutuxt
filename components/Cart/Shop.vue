@@ -1,5 +1,5 @@
 <template>
-  <div class="shop">
+  <div class="cart">
 
     <Cart
       :cart="cart"
