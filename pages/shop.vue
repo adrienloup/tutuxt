@@ -1,20 +1,20 @@
 <template>
-  <section class="page-shop">
+  <section class="shop">
 
-    <h1>
-      Shop
-    </h1>
+    <header class="shop-header">
 
-    <button-primary
-      to="/"
-    >
-      TuTuxt
-    </button-primary>
+      <button-primary
+        to="/"
+      >
+        TuTuxt
+      </button-primary>
 
-    <nav>
-      <NuxtLink :to="'/shop/women'">Women</NuxtLink>
-      <NuxtLink :to="'/shop/men'">Men</NuxtLink>
-    </nav>
+      <nav>
+        <NuxtLink :to="'/shop/women'">Women</NuxtLink>
+        <NuxtLink :to="'/shop/men'">Men</NuxtLink>
+      </nav>
+
+    </header>
 
     <NuxtChild />
 
@@ -26,7 +26,6 @@ import ButtonPrimary from '@/components/Button/Primary';
 
 export default {
   components: { ButtonPrimary },
-  // transition: 'tutu2',
   layout (context) {
     return 'shop'
   }
