@@ -90,7 +90,7 @@
     </ButtonPrimary>
 
     <ButtonPrimary
-      :to="'/'"
+      :to="{ name: 'index' }"
       nuxt
     >
       TuTuxt

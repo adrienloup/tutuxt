@@ -25,7 +25,7 @@ export default {
       default: null
     },
     to: {
-      type: String,
+      type: Object,
       default: null
     },
     type: {

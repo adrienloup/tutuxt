@@ -1,6 +1,66 @@
 .shop {
 
   &-header {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
     background-color: #2d2d2d;
+
+    &-nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: stretch;
+      height: 80px;
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 0 1.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #fff;
+      }
+    }
+
+    &-cart {
+      background-color: red;
+    }
+  }
+
+  &-content {
+    padding: 0 .5rem 2rem;
+  }
+
+  &-product {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    width: calc((100% / 4) - 1.5rem);
+    margin: 1.5rem .75rem 0;
+    background-color: hsla(0, 0%, 100%, .9);
+    backface-visibility: hidden;
+    transform-origin: 10% 50%;
+    z-index: 1;
+    cursor: pointer;
+
+    @media screen and (max-width: 1025px) {
+      width: calc((100% / 3) - 1.5rem);
+    }
+
+    @media screen and (max-width: 769px) {
+      width: calc((100% / 2) - 1.5rem);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      margin-bottom: .6rem;
+      padding-top: 100%;
+      background-color: #eee;
+    }
   }
 }

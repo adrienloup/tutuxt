@@ -1,34 +1,39 @@
 <template>
-  <div v-if="display" class="debug">
-    <slot />
+  <div class="shop-product" :class="{ sale: product.sale }">
+    <div class="img">
+      <div @click="addItem">
+        tutu
+      </div>
+    </div>
+    <div class="caption">
+      <span class="title">{{ product.name }}</span>
+      <span class="sale" v-if="product.sale">Sale</span>
+      <span class="price">{{ product.price | usdollar }}</span>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Debug',
-  data() {
-    return {
-      display: false
-    };
-  },
-  mounted() {
-    const debug = this.$router?.currentRoute?.query['debug'];
-    if (debug === '1') {
-      window.localStorage.setItem('debug', '1');
-    } else if (debug === '0') {
-      window.localStorage.removeItem('debug');
+  props: {
+    product: {
+      type: Object,
+      required: true
+    },
+    index: {
+      type: Number,
+      required: true
     }
-    this.display = !!window.localStorage.getItem('debug');
+  },
+  filters: {
+    usdollar: function(value) {
+      return `$${value}`;
+    }
+  },
+  methods: {
+    addItem() {
+      this.$store.commit('addItem', this.product);
+    }
   }
-};
-</script>
-
-<style lang="scss">
-.debug {
-  padding: .5rem 1rem;
-  background-color: hsla(0, 100%, 50%, .1);
-  font-size: .8rem;
-  color: #f00;
 }
-</style>
+</script>

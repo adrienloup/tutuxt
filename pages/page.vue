@@ -8,8 +8,8 @@
     <br>
 
     <nav>
-      <ButtonPrimary :to="'/page/page1'">Page 1</ButtonPrimary>
-      <ButtonPrimary :to="'/page/page2'">Page 2</ButtonPrimary>
+      <ButtonPrimary :to="{ name: 'page-page1' }">Page 1</ButtonPrimary>
+      <ButtonPrimary :to="{ name: 'page-page2' }">Page 2</ButtonPrimary>
     </nav>
 
     <br>

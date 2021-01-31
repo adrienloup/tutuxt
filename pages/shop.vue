@@ -3,17 +3,21 @@
 
     <header class="shop-header">
 
-      <button-primary
-        to="/"
+      <ButtonPrimary
+        :to="{ name: 'index' }"
       >
         TuTuxt
-      </button-primary>
+      </ButtonPrimary>
 
-      <nav>
-        <NuxtLink :to="'/shop'">Index</NuxtLink>
+      <nav class="shop-header-nav">
+        <NuxtLink :to="'/shop'">Shop</NuxtLink>
         <NuxtLink :to="'/shop/women'">Women</NuxtLink>
         <NuxtLink :to="'/shop/men'">Men</NuxtLink>
       </nav>
+
+      <div class="shop-header-cart">
+        cart
+      </div>
 
     </header>
 
@@ -42,11 +46,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-enter-active, .page-leave-active {
-  transition: opacity .5s
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
-
-.page-enter, .page-leave-active {
-  opacity: 0
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  transform: translate3d(15px, 0, 0);
 }
 </style>
