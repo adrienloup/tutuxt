@@ -9,6 +9,7 @@
 
     <Debug>
       route.path : {{ $route.path }}<br>
+      router.currentRoute.fullPath : {{ $router.currentRoute.fullPath }}<br>
     </Debug>
 
   </div>

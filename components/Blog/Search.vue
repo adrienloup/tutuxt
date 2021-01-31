@@ -25,7 +25,7 @@
       v-for="item in listed"
     >
       <h3 v-if="slugPart">
-        <NuxtLink :to="{ name: slugPart, params: { slug: item.id } }">
+        <NuxtLink :to="{ name: slugPart, params: { id: item.id } }">
           {{ item.title }}
         </NuxtLink>
       </h3>

@@ -1,28 +1,20 @@
 <template>
-  <section class="tutuxt-content">
-
-    <h1>
-      Blog
-    </h1>
-
-    <br>
+  <div>
 
     <div v-if="!posts.length">
       <Loader />
     </div>
 
     <div v-else>
-
       <Search
         :search="search"
         :list="posts"
         :slug-part="slug"
         @refresh="refresh()"
       />
-
     </div>
 
-  </section>
+  </div>
 </template>
 
 <script>
@@ -34,7 +26,7 @@ export default {
   data() {
     return {
       posts: [],
-      slug: 'post-slug',
+      slug: 'blog-posts-id',
       search: ''
     }
   },

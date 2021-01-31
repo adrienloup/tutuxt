@@ -11,7 +11,7 @@
 
     <div v-else>
 
-      <h1>Post {{ post.id }}</h1>
+      <h2>Post {{ post.id }}</h2>
 
       <br>
 
@@ -24,8 +24,14 @@
 
       <h2>{{ post.title }}</h2>
 
+      <br>
+
       <Debug>
-        route.path : {{ $route.path }}<br>
+        route : {{ $route.path }}<br>
+        name : {{ $router.currentRoute.name }}<br>
+        params : {{ $router.currentRoute.params }}<br>
+        fullPath : {{ $router.currentRoute.fullPath }}<br>
+        query : {{ $router.currentRoute.query }}
       </Debug>
 
     </div>
@@ -54,7 +60,7 @@ export default {
   },
   async fetch() {
     this.post = await fetch(
-      `https://jsonplaceholder.typicode.com/photos/${this.$route.params.slug}`
+      `https://jsonplaceholder.typicode.com/photos/${this.$route.params.id}`
     ).then(res => res.json());
   }
 }
