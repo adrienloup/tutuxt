@@ -4,7 +4,7 @@
     <ButtonPrimary :to="'/page'">Page</ButtonPrimary>
     <ButtonPrimary :to="'/component'">Component</ButtonPrimary>
     <ButtonPrimary :to="'/blog'">Blog</ButtonPrimary>
-    <ButtonPrimary :to="'/Shop'">Shop</ButtonPrimary>
+    <ButtonPrimary :to="'/shop'">Shop</ButtonPrimary>
   </header>
 </template>
 

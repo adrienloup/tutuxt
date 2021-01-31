@@ -2,7 +2,7 @@
   <div>
 
     <h2>
-      Women
+      Men
     </h2>
 
     <br>

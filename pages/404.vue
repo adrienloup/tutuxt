@@ -1,22 +1,22 @@
 <template>
   <section class="tutuxt-content">
 
-    <NuxtLogo
-      v-bind="logo"
-    />
-
     <h1>
-      TuTuxt
+      Not found
     </h1>
+
+    <ButtonPrimary to="/">
+      TuTuxt
+    </ButtonPrimary>
 
   </section>
 </template>
 
 <script lang="ts">
-import NuxtLogo from '@/components/Logo/Nuxt.vue';
+import ButtonPrimary from '@/components/Button/Primary';
 
 export default {
-  components: { NuxtLogo },
+  components: { ButtonPrimary },
   data() {
     return {
       logo: {

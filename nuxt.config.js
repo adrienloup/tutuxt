@@ -27,7 +27,14 @@ export default {
   // Router Configuration
   router: {
     linkActiveClass: 'active',
-    linkExactActiveClass: 'exact'
+    linkExactActiveClass: 'exact',
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/404.vue')
+      });
+    }
   },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
