@@ -1,36 +1,42 @@
 <template>
-  <div class="form-field-field">
+  <div
+    class="field"
+    :class="{ error: error }"
+  >
 
-    <label v-if="label" for="id">
-      {{ label }}
+    <label
+      v-if="label"
+      :for="id"
+    >
+      <slot name="label">
+        {{ label }}
+      </slot>
+      <span v-if="required">*</span>
     </label>
 
-    <br>
+    <slot name="default"></slot>
 
-    <input
-      v-bind="$attrs"
-      id="id"
-      :value="value"
-      :type="type"
-      :placeholder="placeholder"
-    />
+    <p v-if="description">
+      <slot name="description">
+        {{ description }}
+      </slot>
+    </p>
+
+    <p
+      v-if="error"
+      class="error"
+    >
+      {{ error }}
+    </p>
 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'FormFieldField',
+  name: 'Field',
   props: {
     id: {
-      type: String,
-      default: null
-    },
-    type: {
-      type: String,
-      default: null
-    },
-    value: {
       type: String,
       default: null
     },
@@ -38,7 +44,15 @@ export default {
       type: String,
       default: null
     },
-    placeholder: {
+    description: {
+      type: String,
+      default: null
+    },
+    required: {
+      type: Boolean,
+      default: false
+    },
+    error: {
       type: String,
       default: null
     }
@@ -46,3 +60,30 @@ export default {
 };
 </script>
 
+<style lang="scss" scoped>
+.field {
+
+  label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  p {
+    display: block;
+    font-size: .8rem;
+  }
+
+  .error {
+    color: #FF4867;
+  }
+
+  &.error {
+
+    input[type="text"],
+    input[type="email"] {
+      border-color: #FF4867;
+    }
+  }
+}
+</style>

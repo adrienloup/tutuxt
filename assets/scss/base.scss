@@ -41,7 +41,7 @@ a {
 }
 
 ul {
-  padding: 1rem;
+  padding: 0 1.5rem;
 }
 
 img {
@@ -50,7 +50,8 @@ img {
   display: block;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
   display: inline-block;
   vertical-align: middle;
   color: $color-primary;

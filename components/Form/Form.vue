@@ -1,35 +1,100 @@
 <template>
-  <div v-if="display" class="debug">
-    <slot />
+  <div class="form">
+
+    <form novalidate @submit.prevent="submit()">
+
+      <FieldText
+        :value.sync="firstName"
+        :label="'First Name'"
+        :description="'Description of the field'"
+        :placeholder="'Enter your first name'"
+        :error="error.firstName"
+        required
+      />
+
+      <FieldText
+        :value.sync="lastName"
+        :label="'Last Name'"
+        :description="'Description of the field'"
+        :placeholder="'Enter your last name'"
+        :error="error.lastName"
+        required
+      />
+
+      <FieldText
+        :value.sync="email"
+        :type="'email'"
+        :label="'Email'"
+        :description="'Description of the field'"
+        :placeholder="'Enter your email'"
+        :error="error.email"
+        required
+      />
+
+      <ButtonPrimary type="submit">
+        Valider
+      </ButtonPrimary>
+
+      <ButtonPrimary
+        :type="'button'"
+        @click="clear()"
+      >
+        Clear
+      </ButtonPrimary>
+
+    </form>
+
   </div>
 </template>
 
 <script>
+import ButtonPrimary from '@/components/Button/Primary';
+import FieldText from '@/components/Form/FieldText';
+
 export default {
-  name: 'Debug',
+  name: 'Form',
+  components: { ButtonPrimary, FieldText },
+  values: {
+    type: Object,
+    default: () => {}
+  },
+  fields: {
+    type: Object,
+    default: () => {}
+  },
   data() {
     return {
-      display: false
-    };
-  },
-  mounted() {
-    const debug = this.$router?.currentRoute?.query['debug'];
-    if (debug === '1') {
-      window.localStorage.setItem('debug', '1');
-    } else if (debug === '0') {
-      window.localStorage.removeItem('debug');
+      firstName: null,
+      lastName: null,
+      email: null,
+      error: {},
+      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
     }
-    this.display = !!window.localStorage.getItem('debug');
+  },
+  methods: {
+    submit() {
+      this.error = {};
+      if (!this.firstName) {
+        this.error.firstName = 'First name is required';
+      }
+      if (!this.lastName) {
+        this.error.lastName = 'Last name is required';
+      }
+      if (!this.email) {
+        this.error.email = 'Email required';
+      } else if (!this.validEmail(this.email)) {
+        this.error.email = 'Valid email required';
+      }
+    },
+    clear() {
+      this.firstName = null;
+      this.lastName = null;
+      this.email = null;
+      this.error = {};
+    },
+    validEmail(email) {
+      return !!email && this.reg.test(email);
+    }
   }
 };
 </script>
-
-<style lang="scss">
-.debug {
-  margin-bottom: 1rem;
-  padding: .5rem 1rem;
-  background-color: hsla(0, 100%, 50%, .1);
-  font-size: .8rem;
-  color: #f00;
-}
-</style>

@@ -1,30 +1,38 @@
 <template>
-  <div class="field">
-
-    <div v-if="legend">
-      <slot name="legend">{{ legend }}</slot>
-    </div>
-
-    <div v-if="label">
-      <slot name="label">{{ label }}</slot>
-    </div>
-
-    <slot name="default"></slot>
-
-    <div v-if="description">
-      <slot name="description">{{ description }}</slot>
-    </div>
-
-  </div>
+  <Field
+    :id="id_sync"
+    :label="label"
+    :description="description"
+    :required="required"
+    :error="error"
+  >
+    <template #default>
+      <input
+        :value="value_sync"
+        :id="id_sync"
+        :type="type"
+        :required="required"
+        :placeholder="placeholder"
+        @input="(event) => $emit('update:value', event.target.value)"
+      >
+    </template>
+  </Field>
 </template>
 
 <script>
+import propSync from '@/mixins/prop-sync.js';
+import Field from '@/components/Form/Field';
+
 export default {
-  name: 'Field',
+  name: 'FieldText',
+  mixins: [
+    propSync('value', null, null)
+  ],
+  components: { Field },
   props: {
-    legend: {
+    type: {
       type: String,
-      default: null
+      default: 'text'
     },
     label: {
       type: String,
@@ -33,6 +41,29 @@ export default {
     description: {
       type: String,
       default: null
+    },
+    placeholder: {
+      type: String,
+      default: null
+    },
+    required: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: String,
+      default: null
+    }
+  },
+  data() {
+    return {
+      id_inner: `field_${Math.random().toString(36).substr(2, 9)}`,
+      blur: false
+    }
+  },
+  computed: {
+    id_sync() {
+      return this.id || this.id_inner;
     }
   }
 };

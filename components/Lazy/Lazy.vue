@@ -41,9 +41,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-ul {
-  padding: 1rem 1rem 0;
-}
-</style>

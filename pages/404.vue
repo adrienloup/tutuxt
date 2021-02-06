@@ -16,6 +16,7 @@
 import ButtonPrimary from '~/components/Button/Primary.vue';
 
 export default {
+  name: 'Page404',
   components: { ButtonPrimary },
   data() {
     return {

@@ -50,6 +50,7 @@ export default {
 body.popin-active {
   overflow-y: hidden;
 }
+
 .popin {
   display: none;
   position: fixed;
@@ -59,6 +60,8 @@ body.popin-active {
   bottom: 0;
   left: 0;
   padding: 2rem;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 375px) {
     padding: 0;
@@ -71,7 +74,7 @@ body.popin-active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0%, 0%, .3);
+    background-color: rgba(0, 0%, 0%, .4);
     animation: 1s appear;
   }
 
@@ -83,49 +86,24 @@ body.popin-active {
     max-width: calc(375px);
     height: auto;
     background-color: #fff;
-    animation-duration: .3s;
-    animation-timing-function: ease-in-out;
+    animation-duration: .4s;
+    animation-timing-function: cubic-bezier(.43, .195, .02, 1);
 
     .top & {
-      top: 0;
       animation-name: top;
     }
 
     .right & {
-      right: 0;
       animation-name: right;
     }
 
     .bottom & {
-      bottom: 0;
-      align-items: flex-end;
       animation-name: bottom;
     }
 
     .left & {
-      left: 0;
       animation-name: left;
     }
-  }
-
-  &.top {
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  &.right {
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  &.bottom {
-    align-items: flex-end;
-    justify-content: center;
-  }
-
-  &.left {
-    align-items: center;
-    justify-content: flex-start;
   }
 
   &.active {
@@ -135,37 +113,37 @@ body.popin-active {
 
 @keyframes top {
   from {
-    -webkit-transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -200%, 0);
   }
   to {
-    -webkit-transform: translate3d(0, 0%, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes right {
   from {
-    -webkit-transform: translate3d( 100%, 0, 0);
+    -webkit-transform: translate3d( 200%, 0, 0);
   }
   to {
-    -webkit-transform: translate3d(0%, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes bottom {
   from {
-    -webkit-transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 200%, 0);
   }
   to {
-    -webkit-transform: translate3d(0, 0%, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes left {
   from {
-    -webkit-transform: translate3d( -100%, 0, 0);
+    -webkit-transform: translate3d( -200%, 0, 0);
   }
   to {
-    -webkit-transform: translate3d(0%, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
   }
 }
 

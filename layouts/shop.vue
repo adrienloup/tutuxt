@@ -6,6 +6,6 @@
 
 <script lang="ts">
 export default {
-  name: 'shop'
+  name: 'LayoutShop'
 }
 </script>

@@ -9,6 +9,7 @@
 import BaseHeader from '@/components/Base/Header.vue';
 
 export default {
+  name: 'LayoutDefault',
   components: { BaseHeader }
 }
 </script>

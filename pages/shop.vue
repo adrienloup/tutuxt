@@ -38,6 +38,7 @@
 import ButtonPrimary from '@/components/Button/Primary';
 
 export default {
+  name: 'PageShop',
   components: { ButtonPrimary },
   layout (context) {
     return 'shop'

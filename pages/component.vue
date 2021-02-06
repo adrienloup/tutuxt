@@ -8,6 +8,14 @@
     <br>
 
     <h2>
+      Form
+    </h2>
+
+    <Form />
+
+    <br>
+
+    <h2>
       TodoList
     </h2>
 
@@ -86,20 +94,19 @@
       :href="'https://fr.nuxtjs.org/'"
       :target="'_blank'"
     >
-      NuxtJS
+      Link
     </ButtonPrimary>
 
     <ButtonPrimary
       :to="{ name: 'index' }"
-      nuxt
     >
-      TuTuxt
+      To
     </ButtonPrimary>
 
     <ButtonPrimary
       :type="'submit'"
     >
-      Type
+      Submit
     </ButtonPrimary>
 
     <br>
@@ -124,6 +131,7 @@
 </template>
 
 <script>
+import Form from '@/components/Form/Form';
 import Popins from '@/components/Popin/Popins';
 import TodoList from '@/components/TodoList/List';
 import Shop from '@/components/Cart/Shop';
@@ -136,6 +144,7 @@ import ButtonPrimary from '@/components/Button/Primary';
 
 export default {
   components: {
+    Form,
     Popins,
     TodoList,
     Shop,

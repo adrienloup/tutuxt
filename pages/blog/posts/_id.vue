@@ -11,21 +11,6 @@
 
     <div v-else>
 
-      <h2>Post {{ post.id }}</h2>
-
-      <br>
-
-      <ButtonPrimary @click="goBack">
-        Back
-      </ButtonPrimary>
-
-      <br>
-      <br>
-
-      <h2>{{ post.title }}</h2>
-
-      <br>
-
       <Debug>
         route : {{ $route.path }}<br>
         name : {{ $router.currentRoute.name }}<br>
@@ -33,6 +18,17 @@
         fullPath : {{ $router.currentRoute.fullPath }}<br>
         query : {{ $router.currentRoute.query }}
       </Debug>
+
+      <h2>
+        Post {{ post.id }}<br>
+        {{ post.title }}
+      </h2>
+
+      <br>
+
+      <ButtonPrimary @click="goBack">
+        Back
+      </ButtonPrimary>
 
     </div>
 
