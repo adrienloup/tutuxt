@@ -7,7 +7,7 @@
     :error="error"
   >
     <template #default>
-      <input
+      <select
         :value="value_sync"
         :id="id_sync"
         :type="type"
@@ -15,7 +15,9 @@
         :maxlength="maxlength"
         :required="required"
         @input="(event) => $emit('update:value', event.target.value)"
-      />
+      >
+        <option disabled>Choisir une option</option>
+      </select>
     </template>
   </Field>
 </template>
@@ -25,7 +27,7 @@ import propSync from '@/mixins/prop-sync.js';
 import Field from '@/components/Form/Field';
 
 export default {
-  name: 'FieldText',
+  name: 'FieldSelect',
   mixins: [
     propSync('value', null, null)
   ],

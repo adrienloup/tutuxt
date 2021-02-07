@@ -57,7 +57,7 @@ export default {
 button.button-primary {
   display: inline-block;
   vertical-align: middle;
-  padding: 1rem 1.5rem;
+  padding: .9rem 1.4rem;
   text-align: center;
   background-color: $color-primary;
   border-radius: 2rem;

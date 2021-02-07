@@ -65,7 +65,7 @@ export default {
 
   label {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
   }
 
@@ -81,7 +81,8 @@ export default {
   &.error {
 
     input[type="text"],
-    input[type="email"] {
+    input[type="email"],
+    input[type="password"] {
       border-color: #FF4867;
     }
   }

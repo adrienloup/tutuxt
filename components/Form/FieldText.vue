@@ -2,7 +2,7 @@
   <Field
     :id="id_sync"
     :label="label"
-    :description="description"
+    :description="charactersLeft ? charactersLeft + ' ' + description : description"
     :required="required"
     :error="error"
   >
@@ -11,10 +11,11 @@
         :value="value_sync"
         :id="id_sync"
         :type="type"
-        :required="required"
         :placeholder="placeholder"
+        :maxlength="maxlength"
+        :required="required"
         @input="(event) => $emit('update:value', event.target.value)"
-      >
+      />
     </template>
   </Field>
 </template>
@@ -46,6 +47,10 @@ export default {
       type: String,
       default: null
     },
+    maxlength: {
+      type: Number,
+      default: null,
+    },
     required: {
       type: Boolean,
       default: false
@@ -58,12 +63,28 @@ export default {
   data() {
     return {
       id_inner: `field_${Math.random().toString(36).substr(2, 9)}`,
-      blur: false
+      charactersLeft: 0
+    }
+  },
+  mounted() {
+    this.getCharactersLeft();
+  },
+  watch: {
+    value_sync() {
+      this.getCharactersLeft();
     }
   },
   computed: {
     id_sync() {
       return this.id || this.id_inner;
+    }
+  },
+  methods: {
+    getCharactersLeft() {
+      if (!!this.maxlength) {
+        const length = !!this.value_sync && this.value_sync.length || 0
+        this.charactersLeft = this.maxlength - length;
+      }
     }
   }
 };
