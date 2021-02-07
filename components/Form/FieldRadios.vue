@@ -2,20 +2,24 @@
   <Field
     :id="id_sync"
     :label="label"
-    :description="charactersLeft ? charactersLeft + ' ' + description : description"
+    :description="description"
     :required="required"
     :error="error"
   >
     <template #default>
-      <input
-        :value="value_sync"
-        :id="id_sync"
-        :type="type"
-        :placeholder="placeholder"
-        :maxlength="maxlength"
-        :required="required"
-        @input="(event) => $emit('update:value', event.target.value)"
-      />
+      <template v-for="(item, key) of items">
+        <input
+          v-model="value_sync"
+          :key="key"
+          :id="id_sync + '-' + key"
+          :type="type"
+          :value="item.value"
+          :required="required"
+        />
+        <label :for="id_sync + '-' + key">
+          {{ item.text }}
+        </label>
+      </template>
     </template>
   </Field>
 </template>
@@ -25,15 +29,19 @@ import propSync from '@/mixins/prop-sync.js';
 import Field from '@/components/Form/Field';
 
 export default {
-  name: 'FieldText',
+  name: 'FieldRadios',
   mixins: [
     propSync('value', null, null)
   ],
   components: { Field },
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     type: {
       type: String,
-      default: 'text'
+      default: 'radio'
     },
     label: {
       type: String,
@@ -43,13 +51,9 @@ export default {
       type: String,
       default: null
     },
-    placeholder: {
-      type: String,
-      default: null
-    },
-    maxlength: {
-      type: Number,
-      default: null,
+    items: {
+      type: Array,
+      default: () => []
     },
     required: {
       type: Boolean,
@@ -62,29 +66,12 @@ export default {
   },
   data() {
     return {
-      id_inner: `field_${Math.random().toString(36).substr(2, 9)}`,
-      charactersLeft: 0
-    }
-  },
-  mounted() {
-    this.getCharactersLeft();
-  },
-  watch: {
-    value_sync() {
-      this.getCharactersLeft();
+      id_inner: `field_${Math.random().toString(36).substr(2, 9)}`
     }
   },
   computed: {
     id_sync() {
       return this.id || this.id_inner;
-    }
-  },
-  methods: {
-    getCharactersLeft() {
-      if (!!this.maxlength) {
-        const length = !!this.value_sync && this.value_sync.length || 0
-        this.charactersLeft = this.maxlength - length;
-      }
     }
   }
 };

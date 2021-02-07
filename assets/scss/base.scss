@@ -55,6 +55,7 @@ input[type="email"],
 input[type="password"],
 select,
 textarea {
+  width: 220px;
   display: inline-block;
   vertical-align: middle;
   color: $color-primary;
@@ -66,4 +67,8 @@ textarea {
   font-family: $font-family;
   font-size: .9rem;
   line-height: 1.4;
+}
+
+::placeholder {
+  color: $color-primary;
 }

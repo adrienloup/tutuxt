@@ -9,11 +9,9 @@
       {{ listed.length }}
     </label>
 
-    <ul>
-      <li v-for="item in listed">
+    <div v-for="item in listed">
         {{ item.title }}
-      </li>
-    </ul>
+    </div>
 
     <div v-if="listed.length === 0">Not found</div>
 

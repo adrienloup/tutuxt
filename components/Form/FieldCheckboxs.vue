@@ -2,7 +2,7 @@
   <Field
     :id="id_sync"
     :label="label"
-    :description="charactersLeft ? charactersLeft + ' ' + description : description"
+    :description="description"
     :required="required"
     :error="error"
   >
@@ -11,8 +11,16 @@
         v-model="value_sync"
         :id="id_sync"
         :type="type"
+        :value="value_sync"
         :required="required"
       />
+      <label :for="id_sync">
+        {{ text }}
+        <a v-if="textLink" :href="link" target="_blank">
+          {{ textLink }}
+        </a>
+        <span v-if="required">*</span>
+      </label>
     </template>
   </Field>
 </template>
@@ -22,7 +30,7 @@ import propSync from '@/mixins/prop-sync.js';
 import Field from '@/components/Form/Field';
 
 export default {
-  name: 'FieldCheckbox',
+  name: 'FieldCheckboxs',
   mixins: [
     propSync('value', null, null)
   ],
@@ -44,6 +52,18 @@ export default {
       type: String,
       default: null
     },
+    text: {
+      type: String,
+      default: null
+    },
+    textLink: {
+      type: String,
+      default: null
+    },
+    link: {
+      type: String,
+      default: null
+    },
     required: {
       type: Boolean,
       default: false
@@ -55,8 +75,7 @@ export default {
   },
   data() {
     return {
-      id_inner: `field_${Math.random().toString(36).substr(2, 9)}`,
-      charactersLeft: 0
+      id_inner: `field_${Math.random().toString(36).substr(2, 9)}`
     }
   },
   computed: {
@@ -66,4 +85,3 @@ export default {
   }
 };
 </script>
-

@@ -75,7 +75,7 @@ body.popin-active {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0%, 0%, .4);
-    animation: 1s appear;
+    animation: .8s appear;
   }
 
   &-inner {

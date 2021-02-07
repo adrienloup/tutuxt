@@ -2,22 +2,24 @@
   <Field
     :id="id_sync"
     :label="label"
-    :description="charactersLeft ? charactersLeft + ' ' + description : description"
+    :description="description"
     :required="required"
     :error="error"
   >
     <template #default>
-      <select
-        :value="value_sync"
-        :id="id_sync"
-        :type="type"
-        :placeholder="placeholder"
-        :maxlength="maxlength"
-        :required="required"
-        @input="(event) => $emit('update:value', event.target.value)"
-      >
-        <option disabled>Choisir une option</option>
-      </select>
+      <div class="select">
+        <select
+          :value="value_sync"
+          :id="id_sync"
+          :required="required"
+          @input="(event) => $emit('update:value', event.target.value)"
+        >
+          <option value="" disabled selected>Select your option</option>
+          <option v-for="option in options" :value="option.value">
+            {{ option.text }}
+          </option>
+        </select>
+      </div>
     </template>
   </Field>
 </template>
@@ -33,9 +35,9 @@ export default {
   ],
   components: { Field },
   props: {
-    type: {
+    id: {
       type: String,
-      default: 'text'
+      default: null
     },
     label: {
       type: String,
@@ -44,14 +46,6 @@ export default {
     description: {
       type: String,
       default: null
-    },
-    placeholder: {
-      type: String,
-      default: null
-    },
-    maxlength: {
-      type: Number,
-      default: null,
     },
     required: {
       type: Boolean,
@@ -65,28 +59,15 @@ export default {
   data() {
     return {
       id_inner: `field_${Math.random().toString(36).substr(2, 9)}`,
-      charactersLeft: 0
-    }
-  },
-  mounted() {
-    this.getCharactersLeft();
-  },
-  watch: {
-    value_sync() {
-      this.getCharactersLeft();
+      options: [
+        { text: 'Mr', value: 'A' },
+        { text: 'Mme', value: 'B' }
+      ]
     }
   },
   computed: {
     id_sync() {
       return this.id || this.id_inner;
-    }
-  },
-  methods: {
-    getCharactersLeft() {
-      if (!!this.maxlength) {
-        const length = !!this.value_sync && this.value_sync.length || 0
-        this.charactersLeft = this.maxlength - length;
-      }
     }
   }
 };

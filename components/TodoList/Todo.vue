@@ -63,6 +63,7 @@ input[type="checkbox"] {
   position: absolute;
   top: -100%;
 }
+
 label {
   display: flex;
   width: 1.5rem;
@@ -72,6 +73,7 @@ label {
   background: #fff;
   border-radius: .3rem;
   border: 3px solid rgba(0, 0, 0, .2);
+
   &::before {
     display: none;
     content: "";
@@ -82,8 +84,10 @@ label {
     border-radius: .1rem;
   }
 }
+
 .done {
   text-decoration:line-through;
+
   & + label::before {
     display: block;
   }

@@ -100,7 +100,7 @@
     <ButtonPrimary
       :to="{ name: 'index' }"
     >
-      To
+      RouterLink
     </ButtonPrimary>
 
     <ButtonPrimary

@@ -5,7 +5,7 @@
       Not found
     </h1>
 
-    <ButtonPrimary to="/">
+    <ButtonPrimary :to="{ name: 'index' }">
       TuTuxt
     </ButtonPrimary>
 

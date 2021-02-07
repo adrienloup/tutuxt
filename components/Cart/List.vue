@@ -1,6 +1,9 @@
 <template>
-  <div class="cart-list-item">
-    <h4 @click="addToCart(item)">{{ item.name }}</h4>
+  <div
+    class="cart-list-item"
+    @click="addToCart(item)"
+  >
+    {{ item.name }}
   </div>
 </template>
 

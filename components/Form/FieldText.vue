@@ -31,6 +31,10 @@ export default {
   ],
   components: { Field },
   props: {
+    id: {
+      type: String,
+      default: null
+    },
     type: {
       type: String,
       default: 'text'
