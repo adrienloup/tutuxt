@@ -2,6 +2,24 @@
   <div>
 
     <ButtonPrimary
+      @click="centerPopin = !centerPopin"
+    >
+      Center
+    </ButtonPrimary>
+
+    <Popin
+      v-model="centerPopin"
+    >
+      <template slot="title">
+        <h3>Center Popin</h3>
+      </template>
+      <template slot="content">
+        <p>Content Popin</p>
+        <br>
+      </template>
+    </Popin>
+
+    <ButtonPrimary
       @click="topPopin = !topPopin"
     >
       Top
@@ -92,9 +110,10 @@ export default {
       topPopin: false,
       rightPopin: false,
       bottomPopin: false,
-      leftPopin: false
+      leftPopin: false,
+      centerPopin: false
     };
   }
-};
+}
 </script>
 

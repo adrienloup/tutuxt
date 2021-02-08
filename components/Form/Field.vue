@@ -107,7 +107,7 @@ export default {
 
     & + label {
       display: inline-block;
-      padding: .6rem .6rem .4rem;
+      padding: .6rem;
       background: #fff;
       border-radius: .3rem;
       border: 3px solid rgba(0, 0, 0, .2);
@@ -117,7 +117,7 @@ export default {
     }
 
     &:checked + label {
-      background: rgba(0, 0, 0, .1);
+      font-weight: bold;
     }
   }
 

@@ -64,7 +64,7 @@ button.button-primary {
   border: none;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: .9rem;
   line-height: 1.2;
   color: $color-default;
   cursor: pointer;

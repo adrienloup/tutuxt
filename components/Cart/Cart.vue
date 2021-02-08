@@ -1,11 +1,10 @@
 <template>
   <div>
 
-    {{ carted }}
-
     <div v-if="cart.length">
       <div v-for="item in cart">
         {{ item.name }}
+        {{ item.quantity }}
       </div>
     </div>
 
@@ -27,18 +26,8 @@ export default {
   props: ['cart', 'total'],
   methods: {
     emptyCart(item) {
+      this.carted = [];
       this.$emit('empty-cart', item);
-    }
-  },
-  computed: {
-    carted() {
-      for (const key of this.cart) {
-        // console.log(key.id);
-        console.log(this.cart.filter(c => c.id === key.id).length);
-        if (this.cart.filter(c => c.id === key.id).length > 1) {
-          console.log('ok');
-        }
-      }
     }
   }
 }

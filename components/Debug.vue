@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss">
 .debug {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding: .5rem 1rem;
   background-color: hsla(0, 100%, 50%, .1);
   font-size: .8rem;

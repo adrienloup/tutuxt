@@ -1,35 +1,71 @@
 <template>
-  <div v-if="display" class="debug">
-    <slot />
+  <div>
+
+    {{ active }}
+
+    <Observer @observer="observer()" />
+
+    <div
+      class="scroll-to"
+      :class="{ active: active }"
+      @click="onClick()"
+    />
+
   </div>
 </template>
 
 <script>
+import Observer from '@/components/ScrollTo/Observer';
+
 export default {
-  name: 'Debug',
+  name: 'ScrollTo',
+  components: { Observer },
   data() {
     return {
-      display: false
+      active: false,
+      scroll: false
     };
   },
   mounted() {
-    const debug = this.$router?.currentRoute?.query['debug'];
-    if (debug === '1') {
-      window.localStorage.setItem('debug', '1');
-    } else if (debug === '0') {
-      window.localStorage.removeItem('debug');
+    this.onScroll = () => {
+      this.scroll = document.documentElement.scrollTop || window.pageYOffset;
+      if (this.scroll === 0) {
+        this.active = false;
+      }
+    };
+    window.addEventListener('scroll', this.onScroll);
+  },
+  destroyed() {
+    if (this.onScroll) {
+      window.removeEventListener('scroll', this.onScroll);
+      this.onScroll = null;
     }
-    this.display = !!window.localStorage.getItem('debug');
+  },
+  methods: {
+    observer() {
+      this.active = true;
+    },
+    onClick() {
+      window.scrollTo(0, 0);
+    }
   }
 };
 </script>
 
 <style lang="scss">
-.debug {
-  margin-bottom: 1rem;
-  padding: .5rem 1rem;
-  background-color: hsla(0, 100%, 50%, .1);
-  font-size: .8rem;
-  color: #f00;
+.scroll-to {
+  width: 4rem;
+  height: 4rem;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  background-color: red;
+  cursor: pointer;
+
+  &.active {
+    display: block;
+  }
 }
 </style>

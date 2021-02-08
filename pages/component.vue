@@ -16,6 +16,14 @@
     <br>
 
     <h2>
+      ScrollTo
+    </h2>
+
+    <ScrollTo />
+
+    <br>
+
+    <h2>
       TodoList
     </h2>
 
@@ -132,6 +140,7 @@
 
 <script>
 import Form from '@/components/Form/Form';
+import ScrollTo from '@/components/ScrollTo/ScrollTo';
 import Popins from '@/components/Popin/Popins';
 import TodoList from '@/components/TodoList/List';
 import Shop from '@/components/Cart/Shop';
@@ -145,6 +154,7 @@ import ButtonPrimary from '@/components/Button/Primary';
 export default {
   components: {
     Form,
+    ScrollTo,
     Popins,
     TodoList,
     Shop,

@@ -64,7 +64,7 @@
         v-model="society"
         :id="'society'"
         :label="'Society'"
-        :description="'Accept the Society'"
+        :description="'Select your option'"
         :items="[
           { value: '1', text: 'Individual' },
           { value: '2', text: 'Professional' }
@@ -91,7 +91,14 @@
         :description="'Description of Terms of Sales'"
       />
 
-      <ButtonPrimary type="submit">
+      <Debug>
+        {{ isValid }}
+      </Debug>
+
+      <ButtonPrimary
+        :type="'submit'"
+        :disabled="!isValid"
+      >
         Valider
       </ButtonPrimary>
 
@@ -104,6 +111,13 @@
 
     </form>
 
+    <Popin v-model="success">
+      <template slot="title">
+        <h3>You are registered</h3>
+        <br>
+      </template>
+    </Popin>
+
   </div>
 </template>
 
@@ -114,6 +128,7 @@ import FieldRadios from '@/components/Form/FieldRadios';
 import FieldSelect from '@/components/Form/FieldSelect';
 import FieldText from '@/components/Form/FieldText';
 import FieldTextarea from '@/components/Form/FieldTextarea';
+import Popin from '@/components/Popin/Popin';
 
 export default {
   name: 'Form',
@@ -123,7 +138,8 @@ export default {
     FieldRadios,
     FieldSelect,
     FieldText,
-    FieldTextarea
+    FieldTextarea,
+    Popin
   },
   data() {
     return {
@@ -142,9 +158,19 @@ export default {
       regEmail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
     }
   },
+  computed: {
+    isValid() {
+      return this.firstName
+        && this.email
+        && this.password
+        && this.society
+        && this.legals;
+    }
+  },
   methods: {
     submit() {
       this.error = {};
+      this.success = false;
 
       if (!this.firstName) {
         this.error.firstName = 'First name is required';
@@ -170,7 +196,9 @@ export default {
         this.error.legals = 'Legal Notices are required';
       }
 
-      this.success = true;
+      if (this.error === null) {
+        this.success = true;
+      }
 
     },
     validPassword(password) {
